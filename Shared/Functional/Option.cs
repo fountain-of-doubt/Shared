@@ -7,7 +7,7 @@ internal interface IOption
     public bool IsNone { get; }
 }
 
-public readonly struct Option<T> : IEquatable<Option<T>>, IOption
+public class Option<T> : IEquatable<Option<T>>, IOption
 {
     private Option(T? value) => Value = value;
 
@@ -33,10 +33,13 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
         return other switch
         {
             null => false,
-            IOption option=> option.IsNone,
+//            IOption option=> option.IsNone,
+            Option<T> x => Equals(x),
             _ => false
         };
     }
+
+
 
     //public bool Equals(Option<T>? other)
     //{
@@ -45,7 +48,17 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
     //    return Value.Equals(other.Value);
     //}
 
-    public bool Equals(Option<T> other) => Value is null ? other.Value is null : Value.Equals(other.Value);
+    //public bool Equals(Option<T> other) => Value is null ? other.Value is null : Value.Equals(other.Value);
+
+    public bool Equals(Option<T>? other)
+    {
+        return other switch
+        {
+            null => false,
+            not null when other.Value is null => Value is null,
+            _ => other.Value.Equals(Value)
+        };
+    }
 
     public static bool operator ==(Option<T>? left, Option<T>? right) => left is null ? right is null : left.Equals(right);
     public static bool operator !=(Option<T>? left, Option<T>? right) => !(left == right);
