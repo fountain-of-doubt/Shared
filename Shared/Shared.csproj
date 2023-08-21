@@ -16,4 +16,26 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Functional\Result.old\ResultTE.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Aliases.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Bind.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Map.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Match.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Reduce.cs" />
+    <Compile Remove="Functional\Result.old\ResultTEExtensions.Tap.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Functional\Result.old\ResultTE.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Aliases.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Bind.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Map.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Match.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Reduce.cs" />
+    <None Include="Functional\Result.old\ResultTEExtensions.Tap.cs" />
+  </ItemGroup>
+
 </Project>
