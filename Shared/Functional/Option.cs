@@ -8,7 +8,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>
 
     public static implicit operator Option<T>(T? value) => value is null ? None : Some(value);
 
-    public static Option<T> None => _none;
+    public static readonly Option<T> None = new(default);
     public static Option<T> Some(T value) => new Option<T>(value ?? throw new ArgumentNullException(nameof(value)));
     public static Option<T> From(T? value) => value is null ? None : Some(value);
 
@@ -36,6 +36,4 @@ public readonly struct Option<T> : IEquatable<Option<T>>
 
     public static bool operator ==(Option<T>? left, Option<T>? right) => left is null ? right is null : left.Equals(right);
     public static bool operator !=(Option<T>? left, Option<T>? right) => !(left == right);
-
-    private static readonly Option<T> _none = new(default);
 }
