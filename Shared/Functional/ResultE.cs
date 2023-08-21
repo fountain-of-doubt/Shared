@@ -3,7 +3,7 @@
 namespace Shared.Functional;
 
 // Result of an operation that has no return value on success but returns error details on fail
-public struct Result<TError>
+public readonly struct Result<TError>
 {
     public Result() : this(default) { }
 

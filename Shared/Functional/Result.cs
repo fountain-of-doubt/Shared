@@ -1,7 +1,7 @@
 ﻿namespace Shared.Functional;
 
 // Result of an operation that has no return value on success and returns no error details on fail
-public struct Result
+public readonly struct Result
 {
     public Result() : this(false) { }
 

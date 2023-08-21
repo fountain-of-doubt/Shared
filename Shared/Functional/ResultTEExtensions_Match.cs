@@ -1,6 +1,6 @@
 ﻿namespace Shared.Functional;
 
-public static class ResultTEExtensions
+public static partial class ResultTEExtensions
 {
     public static TOut Match<TError, TSuccess, TOut>(in this Result<TError, TSuccess> result, Func<TSuccess, TOut> OnSuccess, Func<TError, TOut> OnFail)
         => result.IsSuccess
