@@ -7,20 +7,24 @@ public struct Result<TError, TSuccess>
 {
     public Result() : this(default, default) { }
 
-    private Result(TError? error, TSuccess? success)
+    private Result(TError? error, TSuccess? value)
     {
-        if ((error is not null && success is not null) || (error is null && success is null))
+        if ((error is not null && value is not null) || (error is null && value is null))
         {
             throw new ArgumentException();
         }
 
         ErrorContent = error;
-        SuccessContent = success;
-        IsSuccess = success is not null;
+        SuccessContent = value;
+        IsSuccess = value is not null;
     }
 
     public static Result<TError, TSuccess> Fail(TError error) => new Result<TError, TSuccess>(error, default);
     public static Result<TError, TSuccess> Success(TSuccess success) => new Result<TError, TSuccess>(default, success);
+
+
+    public static explicit operator Result<TError, TSuccess>(TError error) => error is not null ? Fail(error) : throw new ArgumentNullException(nameof(error));
+    public static explicit operator Result<TError, TSuccess>(TSuccess value) => value is not null ? Success(value) : throw new ArgumentNullException(nameof(value));
 
     [MemberNotNullWhen(true, nameof(ErrorContent))]
     [MemberNotNullWhen(false, nameof(SuccessContent))]

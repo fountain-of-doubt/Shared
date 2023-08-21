@@ -16,6 +16,8 @@ public struct Result<TError>
     public static Result<TError> Fail(TError error) => new(error);
     public static readonly Result<TError> Success = new(default);
 
+    public static implicit operator Result<TError>(TError error) => error is null ? Success : Fail(error);
+
     [MemberNotNullWhen(true, nameof(ErrorContent))]
     internal bool IsFail => !IsSuccess;
     [MemberNotNullWhen(false, nameof(ErrorContent))]
