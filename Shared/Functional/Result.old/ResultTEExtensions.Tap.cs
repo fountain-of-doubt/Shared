@@ -8,16 +8,16 @@ public static partial class ResultTEExtensions
         return result;
     }
 
-    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action OnFail)
+    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action OnFailure)
     {
-        if (result.IsFail) { OnFail(); }
+        if (result.IsFail) { OnFailure(); }
         return result;
     }
 
-    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action OnSuccess, Action OnFail)
+    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action OnSuccess, Action OnFailure)
     {
         if (result.IsSuccess) { OnSuccess(); }
-        else { OnFail(); }
+        else { OnFailure(); }
         return result;
     }
 
@@ -27,16 +27,16 @@ public static partial class ResultTEExtensions
         return result;
     }
 
-    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TError> OnFail)
+    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TError> OnFailure)
     {
-        if (result.IsFail) { OnFail(result.ErrorContent); }
+        if (result.IsFail) { OnFailure(result.ErrorContent); }
         return result;
     }
 
-    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TSuccess> OnSuccess, Action<TError> OnFail)
+    public static Result<TError, TSuccess> Tap<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TSuccess> OnSuccess, Action<TError> OnFailure)
     {
         if (result.IsSuccess) { OnSuccess(result.SuccessContent); }
-        else { OnFail(result.ErrorContent); }
+        else { OnFailure(result.ErrorContent); }
         return result;
     }
 }

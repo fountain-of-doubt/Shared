@@ -9,9 +9,9 @@ public static partial class ResultTEExtensions
         => result.Map(map);
 
 
-    public static TOut Handle<TError, TSuccess, TOut>(in this Result<TError, TSuccess> result, Func<TSuccess, TOut> OnSuccess, Func<TError, TOut> OnFail)
-        => result.Match(OnSuccess, OnFail);
+    public static TOut Handle<TError, TSuccess, TOut>(in this Result<TError, TSuccess> result, Func<TSuccess, TOut> OnSuccess, Func<TError, TOut> OnFailure)
+        => result.Match(OnSuccess, OnFailure);
 
-    public static void Handle<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TSuccess> OnSuccess, Action<TError> OnFail)
-        => result.Match(OnSuccess, OnFail); 
+    public static void Handle<TError, TSuccess>(in this Result<TError, TSuccess> result, Action<TSuccess> OnSuccess, Action<TError> OnFailure)
+        => result.Match(OnSuccess, OnFailure); 
 }
