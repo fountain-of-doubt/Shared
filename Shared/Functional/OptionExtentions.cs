@@ -2,10 +2,10 @@
 
 public static class OptionExtentions
 {
-    public static Option<TOut> Map<T, TOut>(in this Option<T> option, Func<T, TOut> map)
+    public static Option<TOut> Map<T, TOut>(in this Option<T> option, Func<T, TOut?> map)
         => option.IsNone
             ? Option<TOut>.None
-            : Option<TOut>.Some(map(option.Value));
+            : Option<TOut>.From(map(option.Value));
 
     public static Option<TOut> Bind<T, TOut>(in this Option<T> option, Func<T, Option<TOut>> bind)
         => option.IsNone

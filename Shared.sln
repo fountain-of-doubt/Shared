@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{FC400F61-66BB-4F53-8936-B9B1E2BCA7BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functional.UnitTests", "Functional.UnitTests\Functional.UnitTests.csproj", "{AF713F5F-CC3F-404E-BEC9-578798D0F43D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FC400F61-66BB-4F53-8936-B9B1E2BCA7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC400F61-66BB-4F53-8936-B9B1E2BCA7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC400F61-66BB-4F53-8936-B9B1E2BCA7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF713F5F-CC3F-404E-BEC9-578798D0F43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF713F5F-CC3F-404E-BEC9-578798D0F43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF713F5F-CC3F-404E-BEC9-578798D0F43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF713F5F-CC3F-404E-BEC9-578798D0F43D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
