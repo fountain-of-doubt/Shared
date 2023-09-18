@@ -1,4 +1,6 @@
-﻿namespace Shared.Functional;
+﻿using Shared.Functional.Results;
+
+namespace Shared.Functional;
 
 public static partial class ResultExtensions
 {

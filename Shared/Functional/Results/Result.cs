@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Shared.Functional;
+namespace Shared.Functional.Results;
 
-// Result of an operation that returns a value on success or returns an error on fail
 public readonly struct Result<TError, TSuccess>
 {
     public Result() : this(false, default, default) { }
