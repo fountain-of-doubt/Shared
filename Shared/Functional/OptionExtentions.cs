@@ -1,5 +1,12 @@
 ﻿namespace Shared.Functional;
 
+public static class Option
+{
+    public static Option<T> Some<T>(T value) => Option<T>.Some(value);
+    public static Option<T> From<T>(T? value) => Option<T>.From(value);
+}
+
+
 public static class OptionExtentions
 {
     public static Option<TOut> Map<T, TOut>(in this Option<T> option, Func<T, TOut?> map)
