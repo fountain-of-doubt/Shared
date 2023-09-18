@@ -1,4 +1,4 @@
-﻿namespace Shared.Functional;
+﻿namespace Shared.Functional.Optional;
 
 public static partial class OptionExtensionsAsync
 {

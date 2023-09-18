@@ -1,4 +1,4 @@
-﻿namespace Shared.Functional;
+﻿namespace Shared.Functional.Optional;
 
 internal interface IOption
 {

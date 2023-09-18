@@ -1,4 +1,5 @@
-﻿namespace Shared.Functional;
+﻿namespace Shared.Functional.Optional;
+
 public readonly struct None : IOption
 {
     public static readonly None Value = new None();

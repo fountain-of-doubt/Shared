@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Shared.Functional;
+namespace Shared.Functional.Optional;
 
 public readonly struct Option<T> : IEquatable<Option<T>>, IOption
 {
@@ -41,7 +41,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
 
     private bool Equals(IOption other)
     {
-        return this.IsNone switch
+        return IsNone switch
         {
             true => other.IsNone,
             _ => false
@@ -50,7 +50,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
 
     public bool Equals<R>(Option<R> other)
     {
-        return this.IsNone switch
+        return IsNone switch
         {
             true => other.IsNone,
             _ => false
@@ -59,7 +59,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
 
     public bool Equals(Option<T> other)
     {
-        return this.IsNone switch
+        return IsNone switch
         {
             true => other.IsNone,
             false when other.IsSome => Value.Equals(other.Value),
