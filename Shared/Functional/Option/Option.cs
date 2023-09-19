@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Shared.Functional.Optional;
+namespace Shared.Functional;
 
 public readonly struct Option<T> : IEquatable<Option<T>>, IOption
 {
@@ -28,7 +28,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IOption
     public static bool operator ==(Option<T> left, Option<T> right) => left.Equals(right);
     public static bool operator !=(Option<T> left, Option<T> right) => !(left == right);
 
-    public override bool Equals(object? other)
+    public override bool Equals([NotNullWhen(true)] object? other)
     {
         return other switch
         {

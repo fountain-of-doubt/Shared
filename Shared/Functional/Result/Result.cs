@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Shared.Functional.Results;
+namespace Shared.Functional;
 
 public readonly struct Result<TError, TSuccess>
 {
